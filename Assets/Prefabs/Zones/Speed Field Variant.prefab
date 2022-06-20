@@ -73,11 +73,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3316693843315419085, guid: 52c54d20c93a2904696a393299735d6c, type: 3}
       propertyPath: m_Color.g
-      value: 0.3431788
+      value: 0.7119576
       objectReference: {fileID: 0}
     - target: {fileID: 3316693843315419085, guid: 52c54d20c93a2904696a393299735d6c, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.9622642
       objectReference: {fileID: 0}
     - target: {fileID: 3316693843315419086, guid: 52c54d20c93a2904696a393299735d6c, type: 3}
       propertyPath: m_Name
@@ -102,5 +102,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a543db9c41b71384084c6b21e74eff10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoneColor: {r: 1, g: 0.3431788, b: 0, a: 0.2}
+  zoneColor: {r: 0.9622642, g: 0.7119576, b: 0, a: 0.2}
   speedMultiplier: 0
