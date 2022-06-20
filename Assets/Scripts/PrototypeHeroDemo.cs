@@ -7,9 +7,9 @@ public class PrototypeHeroDemo : MonoBehaviour
 {
 
    [Header("Variables")]
-   [SerializeField] float m_maxSpeed = 4.5f;
+   public float m_maxSpeed = 4.5f;
    [SerializeField] float m_sprintMultiplier = 2.0f;
-   [SerializeField] float m_jumpForce = 7.5f;
+   public float m_jumpForce = 7.5f;
    [SerializeField] bool m_hideSword = false;
    [Header("Effects")]
    [SerializeField] GameObject m_RunStopDust;
@@ -29,6 +29,8 @@ public class PrototypeHeroDemo : MonoBehaviour
    private bool m_moving = false;
    private int m_facingDirection = 1;
    private float m_disableMovementTimer = 0.0f;
+
+   private float m_currentSpeed;
    private float m_currentSprintMultiplier;
 
    // Use this for initialization
@@ -111,14 +113,17 @@ public class PrototypeHeroDemo : MonoBehaviour
          m_facingDirection = -1;
       }
 
-      // We don't want the player to sprint / stop sprinting mid air
+      // We don't want the player speed to change mid air
       if(m_grounded)
+      {
+         m_currentSpeed = m_maxSpeed;
          m_currentSprintMultiplier = sprintInput.ReadValue<float>() > 0 ? m_sprintMultiplier : 1;
+      }
 
       // SlowDownSpeed helps decelerate the characters when stopping
       float SlowDownSpeed = m_moving ? 1.0f : 0.5f;
       // Set movement
-      m_body2d.AddForce(new Vector2(inputX * m_maxSpeed * SlowDownSpeed * m_currentSprintMultiplier, m_body2d.velocity.y) - m_body2d.velocity, ForceMode2D.Impulse);
+      m_body2d.AddForce(new Vector2(inputX * m_currentSpeed * SlowDownSpeed * m_currentSprintMultiplier, m_body2d.velocity.y) - m_body2d.velocity, ForceMode2D.Impulse);
       //m_body2d.velocity = new Vector2(inputX * m_maxSpeed * SlowDownSpeed * sprintMultiplier, m_body2d.velocity.y);
 
       // Set AirSpeed in animator

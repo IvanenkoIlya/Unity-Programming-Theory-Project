@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Effect Zone
   layers:
   - Default
   - TransparentFX
@@ -40,6 +41,9 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 915332771
+    locked: 0
+  - name: Effect Zone
+    uniqueID: 491402787
     locked: 0
   - name: Default
     uniqueID: 0
