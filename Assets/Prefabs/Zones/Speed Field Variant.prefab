@@ -103,4 +103,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoneColor: {r: 0.9622642, g: 0.7119576, b: 0, a: 0.2}
-  speedMultiplier: 0
+  speedMultiplier: 1.5

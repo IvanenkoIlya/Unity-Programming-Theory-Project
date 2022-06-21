@@ -12,6 +12,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3316693843315419075, guid: 52c54d20c93a2904696a393299735d6c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316693843315419075, guid: 52c54d20c93a2904696a393299735d6c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316693843315419075, guid: 52c54d20c93a2904696a393299735d6c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -91,4 +99,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoneColor: {r: 0.36819267, g: 0.990566, b: 0.042052314, a: 0.2}
-  jumpMultiplier: 2
+  jumpMultiplier: 1.25
