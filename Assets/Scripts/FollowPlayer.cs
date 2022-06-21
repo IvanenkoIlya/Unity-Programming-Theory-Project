@@ -2,11 +2,9 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
-   [SerializeField]
-   private GameObject player;
-
-   private float leftBound = -7.5f;
-   private float rightBound = 7.5f;
+   [SerializeField] private GameObject player;
+   [SerializeField] private float leftBound = -7.5f;
+   [SerializeField] private float rightBound = 17.5f;
 
    public bool followPlayer = true;
    public Vector3 offset;
