@@ -75,6 +75,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.36819267
       objectReference: {fileID: 0}
+    - target: {fileID: 3316693843315419085, guid: 52c54d20c93a2904696a393299735d6c, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316693843315419085, guid: 52c54d20c93a2904696a393299735d6c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 104956193
+      objectReference: {fileID: 0}
     - target: {fileID: 3316693843315419086, guid: 52c54d20c93a2904696a393299735d6c, type: 3}
       propertyPath: m_Name
       value: Jump Field Variant
