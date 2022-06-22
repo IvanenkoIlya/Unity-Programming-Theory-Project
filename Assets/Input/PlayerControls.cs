@@ -57,7 +57,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Interact"",
                     ""type"": ""Button"",
-                    ""id"": ""43c73ba9-26ed-4893-ab8a-e6ecdf4f9535"",
+                    ""id"": ""ae0c4a09-73e4-47b1-8da4-f22a92545424"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -188,22 +188,22 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""a960feac-ba02-49ab-aea5-55ba8c16e6aa"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""id"": ""e3f0bf97-5053-477d-8e89-fea40cab917c"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""338ba050-ccb2-436c-966b-fef60e60791b"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""id"": ""e4158686-7a93-458c-8772-b21674f64086"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Gamepad"",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false

@@ -3,8 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Effect Zone
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -39,12 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
+  - name: Skybox
     uniqueID: 915332771
     locked: 0
-  - name: Effect Zone
-    uniqueID: 491402787
+  - name: Background
+    uniqueID: 104956193
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 3142778057
     locked: 0

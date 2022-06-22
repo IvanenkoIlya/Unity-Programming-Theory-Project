@@ -16,7 +16,6 @@ public class PrototypeHeroDemo : MonoBehaviour
    [SerializeField] GameObject m_JumpDust;
    [SerializeField] GameObject m_LandingDust;
 
-   private PlayerControls playerControls;
    private InputAction moveInput;
    private InputAction sprintInput;
    
@@ -43,28 +42,25 @@ public class PrototypeHeroDemo : MonoBehaviour
       m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_Prototype>();
    }
 
-   private void Awake()
-   {
-      playerControls = new PlayerControls();
-   }
-
    private void OnEnable()
    {
-      moveInput = playerControls.Player.Move;
-      moveInput.Enable();
+      PlayerInputManager.Instance.PlayerControls.Enable();
+      moveInput = PlayerInputManager.Instance.PlayerControls.Player.Move;
+      //moveInput.Enable();
 
-      sprintInput = playerControls.Player.Sprint;
-      sprintInput.Enable();
+      sprintInput = PlayerInputManager.Instance.PlayerControls.Player.Sprint;
+      //sprintInput.Enable();
 
-      playerControls.Player.Jump.Enable();
-      playerControls.Player.Jump.performed += ctx => OnJump();
+      //PlayerInputManager.Instance.PlayerControls.Player.Jump.Enable();
+      PlayerInputManager.Instance.PlayerControls.Player.Jump.performed += ctx => OnJump();
    }
 
    private void OnDisable()
    {
-      moveInput.Disable();
-      sprintInput.Disable();
-      playerControls.Player.Jump.Disable();
+      PlayerInputManager.Instance.PlayerControls.Disable();
+      //moveInput.Disable();
+      //sprintInput.Disable();
+      //PlayerInputManager.Instance.PlayerControls.Player.Jump.Disable();
    }
 
    // Update is called once per frame
