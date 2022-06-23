@@ -200,9 +200,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5d2e7c5ef75ab5478d53ba274cbfb73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDuration: 0.5
+  fadeDuration: 0.6
   interactionRadius: 1
-  interactPromptSprite: {fileID: 21300000, guid: 1124fb0f311c21d499665ebaa8cffebc, type: 3}
+  interactPromptSprite: {fileID: 21300000, guid: 26b6590fac683f043a04be642a6fd354, type: 3}
+  interactPromptScale: 2
   text: Test
 --- !u!1 &5464770089677366421
 GameObject:

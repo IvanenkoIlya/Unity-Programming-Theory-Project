@@ -86,6 +86,7 @@ MonoBehaviour:
   fadeDuration: 0.5
   interactionRadius: 1
   interactPromptSprite: {fileID: 21300000, guid: 1124fb0f311c21d499665ebaa8cffebc, type: 3}
+  interactPromptScale: 2
   stayOpen: 1
 --- !u!1 &5856539256506434140
 GameObject:

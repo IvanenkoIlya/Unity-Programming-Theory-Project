@@ -22,13 +22,13 @@ public class Sensor_Prototype : MonoBehaviour
 
    void OnTriggerEnter2D(Collider2D other)
    {
-      if (!other.CompareTag("Effect Zone"))
-        m_ColCount++;
+      if (other.CompareTag("Ground"))
+         m_ColCount++;
    }
 
    void OnTriggerExit2D(Collider2D other)
    {
-      if (!other.CompareTag("Effect Zone"))
+      if (other.CompareTag("Ground"))
         m_ColCount--;
    }
 

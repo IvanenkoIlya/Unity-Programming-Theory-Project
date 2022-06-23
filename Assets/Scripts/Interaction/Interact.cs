@@ -8,6 +8,7 @@ public class Interact : MonoBehaviour
    [SerializeField] protected float fadeDuration;
    [SerializeField] float interactionRadius;
    [SerializeField] Sprite interactPromptSprite;
+   [SerializeField] float interactPromptScale;
 
    private CircleCollider2D circleCollider;
    private GameObject m_interactPrompt;
@@ -81,11 +82,12 @@ public class Interact : MonoBehaviour
       m_interactPrompt = new GameObject();
       m_interactPrompt.transform.parent = transform;
       m_interactPrompt.name = "Interact prompt";
+      m_interactPrompt.transform.localScale = new Vector3(interactPromptScale, interactPromptScale, interactPromptScale);
 
       // Setup sprite renderer and set it to start invisible
       SpriteRenderer renderer = m_interactPrompt.AddComponent<SpriteRenderer>();
       renderer.sprite = interactPromptSprite;
-      renderer.material.color = new Color(renderer.material.color.r, renderer.material.color.g, renderer.material.color.b, 0.0f);
+      renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, 0.0f);
       renderer.sortingLayerName = parentRenderer.sortingLayerName;
 
       // Set position of interact prompt above object
@@ -136,15 +138,15 @@ public class Interact : MonoBehaviour
 
    private IEnumerator FadeTo(float targetAlpha, float duration)
    {
-      return FadeTo(targetAlpha, duration, interactPrompt);
+      yield return FadeTo(targetAlpha, duration, interactPrompt);
    }
 
    protected IEnumerator FadeTo(float targetAlpha, float duration, GameObject target)
    {
-      return FadeTo(targetAlpha, duration, target.GetComponent<SpriteRenderer>().material);
+      yield return FadeTo(targetAlpha, duration, target.GetComponent<SpriteRenderer>());
    }
 
-   protected IEnumerator FadeTo(float targetAlpha, float duration, Material target)
+   protected IEnumerator FadeTo(float targetAlpha, float duration, SpriteRenderer target)
    {
       Color startingColor = target.color;
       float startingAlpha = startingColor.a;
