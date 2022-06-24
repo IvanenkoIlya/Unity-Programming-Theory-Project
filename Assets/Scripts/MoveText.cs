@@ -1,32 +1,38 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class MoveText : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class MoveText : MonoBehaviour
 {
-   [SerializeField] GameObject text;
    [SerializeField] Vector3 offset;
+   GameObject text;
+   Button button;
 
    private Vector3 originalPosition;
+   private Vector3 targetPosition;
 
-   private void Start()
+   void Awake()
    {
+      text = transform.GetChild(0).gameObject;
       originalPosition = text.transform.position;
+      targetPosition = originalPosition + offset;
    }
 
-   public void OnPointerEnter(PointerEventData eventData)
-   {
-      if (text != null)
-         text.transform.position += offset;
-   }
+   //protected override void DoStateTransition(SelectionState state, bool instant)
+   //{
+   //   base.DoStateTransition(state, instant);
 
-   public void OnPointerExit(PointerEventData eventData)
-   {
-      if (text != null)
-         text.transform.position -= offset;
-   }
+   //   switch(state)
+   //   {
+   //      case SelectionState.Normal:
+   //      case SelectionState.Disabled:
+   //         text.transform.position = originalPosition;
+   //         break;
+   //      case SelectionState.Highlighted:
+   //      case SelectionState.Selected:
+   //      case SelectionState.Pressed:
+   //         text.transform.position = targetPosition;
+   //         break;
 
-   private void OnDisable()
-   {
-      text.transform.position = originalPosition;
-   }
+   //   }
+   //}
 }

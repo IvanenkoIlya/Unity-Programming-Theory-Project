@@ -107,13 +107,13 @@ public class Interact : MonoBehaviour
    protected virtual IEnumerator ShowInteractPrompt(float duration)
    {
       interactPrompt.SetActive(true);
-      yield return FadeTo(1.0f, duration);
+      yield return FadeTo(1.0f);
       fadeCoroutine = null;
    }
 
    protected virtual IEnumerator HideInteractPrompt(float duration)
    {
-      yield return FadeTo(0.0f, duration);
+      yield return FadeTo(0.0f);
       interactPrompt.SetActive(false);
       fadeCoroutine = null;
    }
@@ -136,24 +136,12 @@ public class Interact : MonoBehaviour
          OnInteract();
    }
 
-   private IEnumerator FadeTo(float targetAlpha, float duration)
+   private IEnumerator FadeTo(float targetAlpha)
    {
-      yield return FadeTo(targetAlpha, duration, interactPrompt);
-   }
-
-   protected IEnumerator FadeTo(float targetAlpha, float duration, GameObject target)
-   {
-      yield return FadeTo(targetAlpha, duration, target.GetComponent<SpriteRenderer>());
-   }
-
-   protected IEnumerator FadeTo(float targetAlpha, float duration, SpriteRenderer target)
-   {
-      Color startingColor = target.color;
-      float startingAlpha = startingColor.a;
-      for (float t = 0.0f; t < 1.0; t += Time.deltaTime / duration)
+      IEnumerator fadeEnumerator = FadeUtil.FadeTo(interactPrompt.GetComponent<SpriteRenderer>().color, targetAlpha, fadeDuration);
+      while(fadeEnumerator.MoveNext())
       {
-         Color newColor = new Color(startingColor.r, startingColor.g, startingColor.b, Mathf.Lerp(startingAlpha, targetAlpha, t));
-         target.color = newColor;
+         interactPrompt.GetComponent<SpriteRenderer>().color = (Color)fadeEnumerator.Current;
          yield return null;
       }
    }
