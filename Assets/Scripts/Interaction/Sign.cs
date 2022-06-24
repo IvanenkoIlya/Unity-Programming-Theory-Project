@@ -21,7 +21,7 @@ public class Sign : Interact
    {
       StartCoroutine(HideInteractPrompt(0.2f));
       floatingText.enabled = true;
-      fadeCoroutine = StartCoroutine(FadeTextTo(1.0f, fadeDuration, floatingText));
+      fadeCoroutine = StartCoroutine(FadeTextTo(1.0f));
    }
 
    protected override void OnExitRange()
@@ -33,19 +33,17 @@ public class Sign : Interact
 
    private IEnumerator FadeOutText()
    {
-      yield return FadeTextTo(0, fadeDuration, floatingText);
+      yield return FadeTextTo(0.0f);
       floatingText.enabled = false;
       fadeCoroutine = null;
    }
 
-   private IEnumerator FadeTextTo(float targetAlpha, float duration, TextMeshPro target)
+   private IEnumerator FadeTextTo(float targetAlpha)
    {
-      Color startingColor = target.color;
-      float startingAlpha = startingColor.a;
-      for (float t = 0.0f; t < 1.0; t += Time.deltaTime / duration)
+      IEnumerator fadeEnumerator = FadeUtil.FadeTo(floatingText.color, targetAlpha, fadeDuration);
+      while (fadeEnumerator.MoveNext())
       {
-         Color newColor = new Color(startingColor.r, startingColor.g, startingColor.b, Mathf.Lerp(startingAlpha, targetAlpha, t));
-         target.color = newColor;
+         floatingText.color = (Color)fadeEnumerator.Current;
          yield return null;
       }
    }

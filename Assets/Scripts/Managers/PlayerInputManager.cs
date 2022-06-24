@@ -5,7 +5,6 @@ public class PlayerInputManager : MonoBehaviour
    public static PlayerInputManager Instance;
 
    public PlayerControls PlayerControls { get; private set; }
-   //public InputDevice LastUsedDevice { get; private set; }
 
    private void Awake()
    {
@@ -17,6 +16,7 @@ public class PlayerInputManager : MonoBehaviour
       
       Instance = this;
       PlayerControls = new PlayerControls();
+      PlayerControls.UI.Pause.performed += ctx => GameManager.Instance.TogglePause();
       DontDestroyOnLoad(this);
    }
 }

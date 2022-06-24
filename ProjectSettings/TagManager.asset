@@ -52,3 +52,6 @@ TagManager:
   - name: Foreground
     uniqueID: 3142778057
     locked: 0
+  - name: SceneFade
+    uniqueID: 2556785513
+    locked: 0
