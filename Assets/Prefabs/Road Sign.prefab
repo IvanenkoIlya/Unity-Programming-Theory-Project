@@ -202,7 +202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeDuration: 0.6
   interactionRadius: 1
-  interactPromptSprite: {fileID: 21300000, guid: 26b6590fac683f043a04be642a6fd354, type: 3}
+  interactPromptSprite: {fileID: 117195130, guid: 26b6590fac683f043a04be642a6fd354, type: 3}
   interactPromptScale: 2
   text: Test
 --- !u!1 &5464770089677366421
