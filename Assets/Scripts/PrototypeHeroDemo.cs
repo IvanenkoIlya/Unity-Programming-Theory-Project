@@ -165,6 +165,11 @@ public class PrototypeHeroDemo : MonoBehaviour
       }
    }
 
+   public void GiveSword()
+   {
+      m_hideSword = false;
+   }
+
    // Function used to spawn a dust effect
    // All dust effects spawns on the floor
    // dustXoffset controls how far from the player the effects spawns.

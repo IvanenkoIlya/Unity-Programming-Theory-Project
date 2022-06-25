@@ -28,6 +28,7 @@ public class MainMenuManager : MonoBehaviour
    private void Start()
    {
       SwitchToMenu(0);
+      StartCoroutine(BackgroundMusicManager.Instance.FadeInMusic());
       StartCoroutine(SceneFadeManager.Instance.FadeIn());
    }
 
@@ -93,6 +94,7 @@ public class MainMenuManager : MonoBehaviour
 
    public void StartGame()
    {
+      StartCoroutine(BackgroundMusicManager.Instance.FadeOutMusic());
       StartCoroutine(StartGameCoroutine());
    }
 
@@ -104,6 +106,7 @@ public class MainMenuManager : MonoBehaviour
 
    public void ExitGame()
    {
+      StartCoroutine(BackgroundMusicManager.Instance.FadeOutMusic());
       StartCoroutine(ExitGameCoroutine());
    }
 

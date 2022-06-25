@@ -13,11 +13,11 @@ public class FadeUtil
 
    public static IEnumerator FadeTo(Color startingColor, float targetAlpha, float duration)
    {
-      float startingAlpha = startingColor.a;
-      Color newColor = new Color(startingColor.r, startingColor.g, startingColor.b, startingAlpha);
-      for (float i = 0.0f; i < 1.0f; i += Time.deltaTime / duration)
+      Color newColor = startingColor;
+      IEnumerator fadeEnum = FadeTo(startingColor.a, targetAlpha, duration);
+      while (fadeEnum.MoveNext())
       {
-         newColor.a = Mathf.Lerp(startingAlpha, targetAlpha, i);
+         newColor.a = (float)fadeEnum.Current;
          yield return newColor;
       }
    }

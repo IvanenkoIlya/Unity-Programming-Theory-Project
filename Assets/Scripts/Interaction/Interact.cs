@@ -120,12 +120,12 @@ public class Interact : MonoBehaviour
 
    protected virtual void OnEnterRange()
    {
-      Debug.Log("OnEnterRange");
+      //Debug.Log("OnEnterRange");
    }
 
    protected virtual void OnExitRange()
    {
-      Debug.Log("OnExitRange");
+      //Debug.Log("OnExitRange");
    }
    #endregion
 

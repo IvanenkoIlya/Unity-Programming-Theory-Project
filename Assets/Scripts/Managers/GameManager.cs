@@ -25,8 +25,8 @@ public class GameManager : MonoBehaviour
       }
 
       Instance = this;
+      StartCoroutine(BackgroundMusicManager.Instance.FadeInMusic());
       StartCoroutine(SceneFadeManager.Instance.FadeIn());
-      //DontDestroyOnLoad(gameObject);
    }
 
    public void TogglePause()

@@ -22,6 +22,7 @@ public class SceneFadeManager : MonoBehaviour
       DontDestroyOnLoad(gameObject);
 
       fadeOverlay = GetComponentInChildren<Image>();
+      fadeOverlay.enabled = true;
    }
 
    public IEnumerator FadeIn()

@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseScreen : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class PauseScreen : MonoBehaviour
 
    private void Start()
    {
+      GetComponentInChildren<Image>().enabled = true;
       gameObject.SetActive(false);
       isExiting = false;
    }
@@ -47,6 +49,7 @@ public class PauseScreen : MonoBehaviour
    {
       isExiting = true;
       GameManager.Instance.Unpause();
+      StartCoroutine(BackgroundMusicManager.Instance.FadeOutMusic());
       StartCoroutine(ReturnToMenu());
    }
 
