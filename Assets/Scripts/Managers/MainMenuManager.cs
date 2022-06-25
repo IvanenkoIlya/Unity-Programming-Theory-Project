@@ -101,6 +101,7 @@ public class MainMenuManager : MonoBehaviour
    private IEnumerator StartGameCoroutine()
    {
       yield return SceneFadeManager.Instance.FadeOut();
+      yield return new WaitForSeconds(0.5f);
       SceneManager.LoadScene(1);
    }
 
@@ -113,6 +114,7 @@ public class MainMenuManager : MonoBehaviour
    private IEnumerator ExitGameCoroutine()
    {
       yield return SceneFadeManager.Instance.FadeOut();
+      yield return new WaitForSeconds(0.25f);
 #if UNITY_EDITOR
       EditorApplication.ExitPlaymode();
 #else

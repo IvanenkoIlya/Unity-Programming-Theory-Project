@@ -52,12 +52,13 @@ public class PrototypeHeroDemo : MonoBehaviour
       //sprintInput.Enable();
 
       //PlayerInputManager.Instance.PlayerControls.Player.Jump.Enable();
-      PlayerInputManager.Instance.PlayerControls.Player.Jump.performed += ctx => OnJump();
+      PlayerInputManager.Instance.PlayerControls.Player.Jump.performed += OnJump;
    }
 
    private void OnDisable()
    {
       PlayerInputManager.Instance.PlayerControls.Disable();
+      PlayerInputManager.Instance.PlayerControls.Player.Jump.performed -= OnJump;
       //moveInput.Disable();
       //sprintInput.Disable();
       //PlayerInputManager.Instance.PlayerControls.Player.Jump.Disable();
@@ -133,16 +134,6 @@ public class PrototypeHeroDemo : MonoBehaviour
       m_animator.SetLayerWeight(1, boolInt);
 
       // -- Handle Animations --
-      //Debug.Log($"m_grounded: {m_grounded} m_disableMovementTimer: {m_disableMovementTimer} m_moving: {m_moving}");
-      ////Jump
-      //if (Input.GetButtonDown("Jump") && m_grounded && m_disableMovementTimer < 0.0f)
-      //{
-      //   m_animator.SetTrigger("Jump");
-      //   m_grounded = false;
-      //   m_animator.SetBool("Grounded", m_grounded);
-      //   m_body2d.velocity = new Vector2(m_body2d.velocity.x, m_jumpForce);
-      //   m_groundSensor.Disable(0.2f);
-      //}
       //Run
       if (m_grounded && m_moving)
          m_animator.SetInteger("AnimState", 1);
@@ -152,7 +143,7 @@ public class PrototypeHeroDemo : MonoBehaviour
          m_animator.SetInteger("AnimState", 0);
    }
 
-   private void OnJump()
+   private void OnJump(InputAction.CallbackContext context)
    {
       //Jump
       if (m_grounded && m_disableMovementTimer < 0.0f)

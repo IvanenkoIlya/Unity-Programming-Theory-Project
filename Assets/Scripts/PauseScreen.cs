@@ -56,6 +56,7 @@ public class PauseScreen : MonoBehaviour
    private IEnumerator ReturnToMenu()
    {
       yield return SceneFadeManager.Instance.FadeOut();
+      yield return new WaitForSeconds(0.25f);
       SceneManager.LoadScene(0);
    }
 }
