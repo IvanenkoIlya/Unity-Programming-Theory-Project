@@ -9,7 +9,6 @@ public class BackgroundMusicManager : MonoBehaviour
    [SerializeField] float fadeDuration;
    AudioSource bgm;
 
-
    private void Awake()
    {
       if(Instance != null)

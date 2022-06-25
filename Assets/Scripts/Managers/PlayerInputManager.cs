@@ -4,6 +4,7 @@ public class PlayerInputManager : MonoBehaviour
 {
    public static PlayerInputManager Instance;
 
+   // ENCAPSULATION
    public PlayerControls PlayerControls { get; private set; }
 
    private void Awake()

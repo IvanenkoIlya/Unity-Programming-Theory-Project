@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
+// INHERITANCE
 public class Sign : Interact
 {
    [SerializeField] string text;
@@ -17,6 +18,7 @@ public class Sign : Interact
       floatingText.enabled = false;
    }
 
+   // POLYMORPHISM
    protected override void OnInteract()
    {
       StartCoroutine(HideInteractPrompt(0.2f));
@@ -24,6 +26,7 @@ public class Sign : Interact
       fadeCoroutine = StartCoroutine(FadeTextTo(1.0f));
    }
 
+   // POLYMORPHISM
    protected override void OnExitRange()
    {
       if (fadeCoroutine != null)

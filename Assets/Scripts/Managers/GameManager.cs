@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
    [SerializeField] private bool _isPaused;
 
+   // ENCAPSULATION
    public bool IsPaused 
    { 
       get => _isPaused; 

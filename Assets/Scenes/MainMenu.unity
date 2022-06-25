@@ -379,7 +379,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "This project is a final submission for the Unity Junior Programmer Pathway.
-    It is a platform prototype utilizing object oriented principles. \n\nPlease enjoy!"
+    It is a platform prototype utilizing object oriented principles. \n\nBig thanks
+    to all the creators of the free assets used from the unity asset store!\n\nPlease
+    enjoy!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fb6e6531009f4a74d9a4ecbbe6584ac3, type: 2}
   m_sharedMaterial: {fileID: 3070125209432254250, guid: fb6e6531009f4a74d9a4ecbbe6584ac3, type: 2}

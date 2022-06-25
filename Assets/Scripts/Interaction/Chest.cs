@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+// INHERITANCE
 public class Chest : Interact
 {
    public bool stayOpen = true;
@@ -19,6 +20,7 @@ public class Chest : Interact
       isOpen = false;
    }
 
+   // POLYMORPHISM
    protected override void OnInteract()
    {
       if (!isOpen)
@@ -37,8 +39,9 @@ public class Chest : Interact
       particles.Play();
       yield return new WaitForSeconds(1.75f);
       GameObject.Find("PrototypeHero").GetComponent<PrototypeHeroDemo>().GiveSword();
-   } 
+   }
 
+   // POLYMORPHISM
    protected override void OnExitRange()
    {
       if(isOpen)

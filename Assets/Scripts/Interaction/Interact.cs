@@ -41,6 +41,7 @@ public class Interact : MonoBehaviour
          PlayerInputManager.Instance.PlayerControls.Player.Interact.performed += ctx => OnInteract(ctx);
    }
 
+   // ABSTRACTION
    private void OnTriggerEnter2D(Collider2D collision)
    {
       if (interactionEnabled && collision.CompareTag("Player"))
@@ -53,6 +54,7 @@ public class Interact : MonoBehaviour
       }
    }
 
+   // ABSTRACTION
    private void OnTriggerExit2D(Collider2D collision)
    {
       if (interactionEnabled && collision.CompareTag("Player"))
@@ -75,6 +77,7 @@ public class Interact : MonoBehaviour
       circleCollider.isTrigger = true;
    }
 
+   // ABSTRACTION
    private void CreateInteractPrompt()
    {
       var parentRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -99,11 +102,13 @@ public class Interact : MonoBehaviour
    #endregion
 
    #region Virtual methods
+   // ABSTRACTION
    protected virtual void OnInteract()
    {
       Debug.Log("OnInteract");
    }
 
+   // ABSTRACTION
    protected virtual IEnumerator ShowInteractPrompt(float duration)
    {
       interactPrompt.SetActive(true);
@@ -111,6 +116,7 @@ public class Interact : MonoBehaviour
       fadeCoroutine = null;
    }
 
+   // ABSTRACTION
    protected virtual IEnumerator HideInteractPrompt(float duration)
    {
       yield return FadeTo(0.0f);
